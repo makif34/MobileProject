@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp8.Report"
+             Title="Report">
+    <StackLayout Padding="10" Spacing="10">
+
+        <!-- Assignment List Label -->
+        <Label Text="Assignment List" FontSize="24" HorizontalOptions="Center" Padding="5" />
+
+        <!-- Assignment List -->
+        <ListView x:Name="lstAssignments">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Spacing="5" Padding="10" >
+                            <Label Text="{Binding S_Id, StringFormat='Sales ID: {0}'}" />
+                            <Label Text="{Binding C_ID, StringFormat='Client ID: {0}'}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Show Database Button -->
+        <StackLayout BackgroundColor="Green" Margin="0,10" HorizontalOptions="FillAndExpand">
+            <Button Margin="10,10,10,10" BackgroundColor="White" Text="Show Assignments Database" Clicked="Button_Clicked" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
